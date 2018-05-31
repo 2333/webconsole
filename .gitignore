@@ -1,5 +1,5 @@
 Skip to content
- 
+
 Search or jump to…
 
 Pull requests
@@ -14,7 +14,7 @@ Sign out
 webconsole/.gitignore
 e13527c  9 minutes ago
 @2333 2333 Initial commit
-     
+
 105 lines (84 sloc)  1.17 KB
 # Byte-compiled / optimized / DLL files
 __pycache__/
