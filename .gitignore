@@ -20,7 +20,7 @@ e13527c  9 minutes ago
 __pycache__/
 *.py[cod]
 *$py.class
-
+.gitignore
 # C extensions
 *.so
 
@@ -133,3 +133,6 @@ Shop
 Blog
 About
 Press h to open a hovercard with more details.
+
+.DS_Store
+.idea/workspace.xml
