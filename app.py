@@ -1,6 +1,4 @@
-from flask import Flask, request, redirect, url_for
-
-app = Flask(__name__)
+from flask import request, redirect, url_for
 
 
 @app.route('/')
@@ -25,6 +23,21 @@ def login():
     else:
         return 'Open Login Page'
 
+
+@app.route('/updateip', methods=['GET', 'POST'])
+def updateip():
+    int = "null"
+    ip = "0.0.0.0"
+    if request.method == 'POST':
+        # interface = request.form['interface']
+        # ip = request.form['myip']
+        interface = request.args['interface']
+        ip = request.args['myip']
+    else:
+        interface = request.args['interface'] + "in else"
+        ip = request.args['myip']
+
+    return interface, ip
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=app.debug)
