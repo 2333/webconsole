@@ -4,5 +4,8 @@ DROP table if exists ;
 create table user (
   id, integer primary key AUTOINCREMENT,
   username TEXT,
-  qq
+  qq varchar ,
+  iptype varchar,
+  emaail varchar,
+
 )
