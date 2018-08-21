@@ -27,6 +27,5 @@ class User(object):
     def __init__(self, name=None, iptype=None, qq=None, ):
         self.name = name
 
-
     def __repr__(self):
         return '<User %r>' % (self.name)

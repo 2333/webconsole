@@ -1,3 +1,5 @@
+import functools
+
 from flask import Blueprint, flash, redirect, render_template, request, url_for
 from werkzeug.security import check_password_hash, generate_password_hash
 
@@ -35,7 +37,6 @@ def register():
 
     return render_template('auth/register.html')
 
-
 @bp.route('/login', methods=('GET', 'POST'))
 def login():
     if request.method == 'POST':
@@ -60,3 +61,14 @@ def login():
         flash(error)
 
     return render_template('auth/login.html')
+
+
+def login_required(view):
+    @functools.wraps(view)
+    def wrapped_view(**kwargs):
+        if g.user is None:
+            return redirect(url_for('auth.login'))
+
+        return view(**kwargs)
+
+    return wrapped_view
