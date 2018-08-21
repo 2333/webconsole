@@ -8,3 +8,4 @@ db_session = scoped_session(sessionmaker(autocommit=False,
                                          bind=engine))
 def init_db():
     metadata.create_all(bind=engine)
+

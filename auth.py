@@ -1,4 +1,4 @@
-from flask import Blueprint, flash, redirect, render_template, request, url_for
+from flask import Blueprint, flash, redirect, render_template, request, url_for, g, session
 from werkzeug.security import check_password_hash, generate_password_hash
 
 # from webconsole.db import get_db
@@ -60,3 +60,9 @@ def login():
         flash(error)
 
     return render_template('auth/login.html')
+
+
+@bp.route('/logout')
+def logout():
+    session.clear()
+    return redirect(url_for('index'))
