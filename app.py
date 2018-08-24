@@ -1,11 +1,11 @@
-from flask import request, redirect, url_for
+from flask import request, redirect, url_for,render_template
 
 from .db import db_session
 
 
 @app.route('/')
 def home():
-    return 'Hello World!'
+    render_template('index.html')
 
 
 @app.route('/ppp/')
@@ -46,6 +46,3 @@ def updateip():
 def shutdown_session(exception=None):
     db_session.remove()
 
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=app.debug)
